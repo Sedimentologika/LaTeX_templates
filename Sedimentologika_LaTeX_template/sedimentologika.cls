@@ -451,7 +451,7 @@ bib-item-sep = 8 pt plus 4 pt minus 2 pt}
 \IfFontExistsTF{Noto Sans Math Regular}{
   \setmathfont{notosansmath-regular}
 }{
-  \RequirePackage{notomath}
+  \RequirePackage{firamath-otf}
 }
 
 \captionsetup{font=small, labelfont=bf, justification=justified, labelsep=endash, skip = 5pt, singlelinecheck=off}
