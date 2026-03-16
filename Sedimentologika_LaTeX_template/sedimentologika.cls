@@ -3,14 +3,14 @@
 % https://oap.unige.ch/journals/sdk/
 % Current version with inputs from:
 % Jarred C Lloyd
-% Last updated: 2026-03-13
+% Last updated: 2026-03-16
 % Derived from seismica.cls, and WeAreAGC submission template.
 
 % ----------------------------------------------------------------------------------------
 % Class declaration and switches
 % ----------------------------------------------------------------------------------------
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{sedimentologika}[2026-03-13 Sedimentologika LaTeX class]
+\ProvidesClass{sedimentologika}[2026-03-16 Sedimentologika LaTeX class]
 
 \newif\if@onecolumn
 \@onecolumnfalse
@@ -298,7 +298,7 @@ bib-item-sep = 8 pt plus 4 pt minus 2 pt}
 
 \newenvironment{supplementarymaterial}
 {
-  \section*{Supplementary material}
+  \section*{Supplementary materials}
   \small
 }%
 {
