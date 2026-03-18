@@ -16,7 +16,7 @@ The _Sedimentologika_ `cls` and templates files are written from scratch.
 >
 > This template is only tested using TeXLive version 2025; compatibility with older versions is not guaranteed and is considered an unsupported use case.
 
-If you obtained the _Sedimentologika_ LaTeX template from the official download ([github.com/SedK](https://github.com/Sedimentologika/templates)), you should have zip file, which when unzipped will have a directory structured like:
+If you obtained the _Sedimentologika_ LaTeX template from the official download ([github.com/SedK](https://github.com/Sedimentologika/LaTeX_templates)), you should have zip file, which when unzipped will have a directory structured like:
 
 ```
 │   manuscript.tex
