@@ -3,14 +3,14 @@
 % https://oap.unige.ch/journals/sdk/
 % Current version with inputs from:
 % Jarred C Lloyd
-% Last updated: 2026-03-18
+% Last updated: 2026-03-23
 % Derived from seismica.cls, and WeAreAGC submission template.
 
 % ----------------------------------------------------------------------------------------
 % Class declaration and switches
 % ----------------------------------------------------------------------------------------
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{sedimentologika}[2026-03-18 Sedimentologika LaTeX class]
+\ProvidesClass{sedimentologika}[2026-03-23 Sedimentologika LaTeX class]
 
 \newif\if@onecolumn
 \@onecolumnfalse
@@ -50,7 +50,12 @@
 % ----------------------------------------------------------------------------------------
 % General Packages
 % ----------------------------------------------------------------------------------------
-\RequirePackage[mode=match, unit-mode=match,range-units=single, group-minimum-digits = 3
+\RequirePackage[mode=match,%
+  unit-mode=match,%
+  range-units=single,%
+  group-minimum-digits = 3,%
+  separate-uncertainty = true,%
+  multi-part-units=single%
 ]{siunitx}
 \RequirePackage{xcolor}
 \RequirePackage[scale=2]{ccicons}
