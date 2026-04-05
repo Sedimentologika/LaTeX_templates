@@ -3,14 +3,14 @@
 % https://oap.unige.ch/journals/sdk/
 % Current version with inputs from:
 % Jarred C Lloyd
-% Last updated: 2026-03-26
+% Last updated: 2026-04-05
 % Derived from seismica.cls, and WeAreAGC submission template.
 
 % ----------------------------------------------------------------------------------------
 % Class declaration and switches
 % ----------------------------------------------------------------------------------------
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{sedimentologika}[2026-03-26 Sedimentologika LaTeX class]
+\ProvidesClass{sedimentologika}[2026-04-05 Sedimentologika LaTeX class]
 
 \newif\if@onecolumn
 \@onecolumnfalse
@@ -35,6 +35,10 @@
 \newif\if@anonymous
 \@anonymousfalse
 \DeclareOption{anonymous}{\@anonymoustrue}
+
+\newif\if@longauthor
+\@longauthorfalse
+\DeclareOption{longauthor}{\@longauthortrue}
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions\relax
@@ -391,7 +395,13 @@ bib-item-sep = 8 pt plus 4 pt minus 2 pt}
 \newcommand{\Sedimentologika}{\textcolor{SedK1}{\textit{Sedimentologika}}}
 
 \newcommand{\@insert@preprintdeclaration}{%
-  \begin{textblock*}{40mm}[1,0](195mm,\dimexpr\pageheight-3mm-\zposy{loc:beg_abstract}sp\relax)
+  \begin{textblock*}{40mm}[1,0](195mm,\dimexpr\pageheight-3mm-%
+      \if@longauthor
+      \zposy{loc:endauthorblock}
+      \else
+      \zposy{loc:beg_abstract}
+      \fi
+    sp\relax)
     \bfseries\raggedleft%
     \setlength{\parskip}{\baselineskip}%
     \setlength{\parindent}{\z@}%
@@ -401,8 +411,13 @@ bib-item-sep = 8 pt plus 4 pt minus 2 pt}
 }
 
 \newcommand{\@insert@metadata}{%
-  \begin{textblock*}{40mm}[1,0](195mm,\dimexpr\pageheight-3mm-\zposy{loc:beg_abstract}sp\relax
-    )
+  \begin{textblock*}{40mm}[1,0](195mm,\dimexpr\pageheight-3mm-%
+      \if@longauthor
+      \zposy{loc:endauthorblock}
+      \else
+      \zposy{loc:beg_abstract}
+      \fi
+    sp\relax)
     \footnotesize
     \linespread{1.3}
     \more@metadata
@@ -735,11 +750,11 @@ bib-item-sep = 8 pt plus 4 pt minus 2 pt}
   []
   {
     \textbf{SEDIMENTOLOGIKA}~\textbullet~\@theyear~\textbar~Volume~\@volumenumber, ~Issue~\@issuenumber~\textbar~eISSN~2813-415X~\textbar~\href{https://www.unige.ch/biblio/en/openaccess/publish-a-journal/open-access-publications/}{Published by Geneva University Library Open Access Publications}
-  }
-  {}
-  {\textcolor{SedK2}{\thepage}}
-  \renewcommand{\makefootrule}{\color{SedK1}\rule[0.65\baselineskip]{\linewidth}{0.25pt}}
-}
+    }
+    {}
+    {\textcolor{SedK2}{\thepage}}
+    \renewcommand{\makefootrule}{\color{SedK1}\rule[0.65\baselineskip]{\linewidth}{0.25pt}}
+    }
 
 % ----------------------------------------------------------------------------------------
 % Class option switches
@@ -773,6 +788,7 @@ bib-item-sep = 8 pt plus 4 pt minus 2 pt}
     \postauthor{
       \printCRediTifnotempty
       \@correspondingauthor
+      \zsavepos{loc:endauthorblock}
       \if@proof
       \\\textcolor{orange}{\small\fxnote[layout={inline}]{Please review author names and ORCiD links, affilitations, and CRedIT roles.}}
       \fi
@@ -876,20 +892,29 @@ bib-item-sep = 8 pt plus 4 pt minus 2 pt}
         \thispagestyle{ps_publication_first}
         \fi
       }
+      \if@longauthor
+      \else
       \changetext{}{100mm}{}{}{}
 
       \abstract{#2}
+      \fi
       \vspace{\fill}
     ]
     \clearpage
     \restoregeometry
     \ifx#3\@empty
     \twocolumn[
+      \if@longauthor
+      \abstract{#2}
+      \fi
       \plainlanguagesummary{#1}
       \vglue 2\baselineskip
     ]
     \else
     \twocolumn[
+      \if@longauthor
+      \abstract{#2}
+      \fi
       \plainlanguagesummary{#1}
       #3
       \vglue 2\baselineskip
