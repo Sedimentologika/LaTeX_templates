@@ -3,14 +3,14 @@
 % https://oap.unige.ch/journals/sdk/
 % Current version with inputs from:
 % Jarred C Lloyd
-% Last updated: 2026-04-05
+% Last updated: 2026-04-06
 % Derived from seismica.cls, and WeAreAGC submission template.
 
 % ----------------------------------------------------------------------------------------
 % Class declaration and switches
 % ----------------------------------------------------------------------------------------
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{sedimentologika}[2026-04-05 Sedimentologika LaTeX class]
+\ProvidesClass{sedimentologika}[2026-04-06 Sedimentologika LaTeX class]
 
 \newif\if@onecolumn
 \@onecolumnfalse
@@ -750,11 +750,11 @@ bib-item-sep = 8 pt plus 4 pt minus 2 pt}
   []
   {
     \textbf{SEDIMENTOLOGIKA}~\textbullet~\@theyear~\textbar~Volume~\@volumenumber, ~Issue~\@issuenumber~\textbar~eISSN~2813-415X~\textbar~\href{https://www.unige.ch/biblio/en/openaccess/publish-a-journal/open-access-publications/}{Published by Geneva University Library Open Access Publications}
-    }
-    {}
-    {\textcolor{SedK2}{\thepage}}
-    \renewcommand{\makefootrule}{\color{SedK1}\rule[0.65\baselineskip]{\linewidth}{0.25pt}}
-    }
+  }
+  {}
+  {\textcolor{SedK2}{\thepage}}
+  \renewcommand{\makefootrule}{\color{SedK1}\rule[0.65\baselineskip]{\linewidth}{0.25pt}}
+}
 
 % ----------------------------------------------------------------------------------------
 % Class option switches
@@ -939,10 +939,48 @@ bib-item-sep = 8 pt plus 4 pt minus 2 pt}
   \if@proof
   \pagestyle{ps_proof}
   \setkeys{draftwatermark}{text={PROOF}, stamp=true}
+  \AtEndPreamble{
+    \hypersetup{%
+      pdfauthor={\metaauthlist},
+      pdfdate={\metayear},
+      pdfcopyright={Copyright © \metayear, \metaauth},
+      pdfsubject={Sedimentology},
+      pdfkeywords={\metakeywords},
+      pdflicenseurl={https://creativecommons.org/licenses/by/4.0/},
+      pdfcontactemail={\metacontact},
+      pdfpublication={Sedimentologika},
+      pdfpublisher={Geneva Library},
+      pdfpubtype={journal},
+      pdfvolumenum={\metavolume},
+      pdfissuenum={\metaissue},
+      pdfeissn={2813-415X},
+      pdfpubstatus={PROOF},
+      pdfdoi={\metadoi}
+    }
+  }
   \fi
 
   \if@publication
   \pagestyle{ps_publication}
+  \AtEndPreamble{
+    \hypersetup{%
+      pdfauthor={\metaauthlist},
+      pdfdate={\metayear},
+      pdfcopyright={Copyright © \metayear, \metaauth},
+      pdfsubject={Sedimentology},
+      pdfkeywords={\metakeywords},
+      pdflicenseurl={https://creativecommons.org/licenses/by/4.0/},
+      pdfcontactemail={\metacontact},
+      pdfpublication={Sedimentologika},
+      pdfpublisher={Geneva Library},
+      pdfpubtype={journal},
+      pdfvolumenum={\metavolume},
+      pdfissuenum={\metaissue},
+      pdfeissn={2813-415X},
+      pdfpubstatus={VoR},
+      pdfdoi={\metadoi}
+    }
+  }
   \fi
 
   \if@anonymous
