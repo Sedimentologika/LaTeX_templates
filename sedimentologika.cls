@@ -63,6 +63,8 @@
   list-units=single%
 ]{siunitx}
 \RequirePackage{xcolor}
+\RequirePackage[most]{tcolorbox}
+\RequirePackage{multicol}
 \RequirePackage[scale=2]{ccicons}
 \RequirePackage{simpleicons}
 \RequirePackage{amsmath}
@@ -395,13 +397,7 @@ bib-item-sep = 8 pt plus 4 pt minus 2 pt}
 \newcommand{\Sedimentologika}{\textcolor{SedK1}{\textit{Sedimentologika}}}
 
 \newcommand{\@insert@preprintdeclaration}{%
-  \begin{textblock*}{40mm}[1,0](195mm,\dimexpr\pageheight-3mm-%
-      \if@longauthor
-      \zposy{loc:endauthorblock}
-      \else
-      \zposy{loc:beg_abstract}
-      \fi
-    sp\relax)
+  \begin{textblock*}{40mm}[1,0](195mm,\dimexpr\pageheight-3mm-\zposy{loc:beg_abstract}sp\relax)
     \bfseries\raggedleft%
     \setlength{\parskip}{\baselineskip}%
     \setlength{\parindent}{\z@}%
@@ -411,41 +407,101 @@ bib-item-sep = 8 pt plus 4 pt minus 2 pt}
 }
 
 \newcommand{\@insert@metadata}{%
+  \if@longauthor
+  \clearpage
+  \begin{textblock*}{0.9\textwidth}[0.5,0.5](%
+    \dimexpr\pagewidth/2\relax,%
+    \dimexpr\pageheight/2 + \zposy{loc:endauthorblock}sp/2 - 17mm\relax%
+    )
+    \metadata@boxed
+  \end{textblock*}
+  \else
   \begin{textblock*}{40mm}[1,0](195mm,\dimexpr\pageheight-3mm-%
-      \if@longauthor
-      \zposy{loc:endauthorblock}
-      \else
       \zposy{loc:beg_abstract}
-      \fi
     sp\relax)
     \footnotesize
     \linespread{1.3}
-    \more@metadata
+    \metadata@vertical
   \end{textblock*}
+  \fi
 }
 
-\newcommand{\printifnotempty}[4]{%
+\newcommand{\printifnotempty}[5]{%
   \ifthenelse{\equal{#3}{}}{}{
-    \begin{flushright}
+    \begin{#5}
       \bfseries\textcolor{SedK1}{#1}#2\mdseries\textcolor{SedK2}{#3}#4
-    \end{flushright}
+    \end{#5}
   }
 }
 
-\newcommand{\more@metadata}{%
+\newcommand{\metadata@vertical}{%
   \printifnotempty{\mdseries\textcolor{lightgray}{\raisebox{-1.2ex}{\LARGE\simpleicon{openaccess}
-  }}}{\enspace}{\bfseries\normalsize\@articletype}{\vspace{3mm}}
-  \printifnotempty{Executive Editor}{\par}{\@execedname}{\vspace{3mm}}
-  \printifnotempty{Associate Editor}{\par}{\@assocedname}{\vspace{3mm}}
-  \printifnotempty{Reviewers}{\par}{\@reviewername}{\vspace{3mm}}
-  \printifnotempty{Production Manager}{\par}{\@prodmanname}{\vspace{3mm}}
-  \printifnotempty{Production Assistant}{\par}{\@prodassist}{\vspace{3mm}}
-  \printifnotempty{Copy Editor}{\par}{\@copyedname}{\vspace{3mm}}
-  \printifnotempty{Received:}{~}{\@receiveddate}{\par}
-  \printifnotempty{Accepted:}{~}{\@accepteddate}{\par}
-  \printifnotempty{Published:}{~}{\@publisheddate}{\vspace{4mm}}
-  \printifnotempty{\textcolor{SedkGrey}{Keywords}}{\par}{\textcolor{SedkGrey}{\@keywords}}{\par}
+  }}}{\enspace}{\bfseries\normalsize\@articletype}{\vspace{3mm}}{flushright}
+  \printifnotempty{Executive Editor}{\par}{\@execedname}{\vspace{3mm}}{flushright}
+  \printifnotempty{Associate Editor}{\par}{\@assocedname}{\vspace{3mm}}{flushright}
+  \printifnotempty{Reviewers}{\par}{\@reviewername}{\vspace{3mm}}{flushright}
+  \printifnotempty{Production Manager}{\par}{\@prodmanname}{\vspace{3mm}}{flushright}
+  \printifnotempty{Production Assistant}{\par}{\@prodassist}{\vspace{3mm}}{flushright}
+  \printifnotempty{Copy Editor}{\par}{\@copyedname}{\vspace{3mm}}{flushright}
+  \printifnotempty{Received:}{~}{\@receiveddate}{\par}{flushright}
+  \printifnotempty{Accepted:}{~}{\@accepteddate}{\par}{flushright}
+  \printifnotempty{Published:}{~}{\@publisheddate}{\vspace{4mm}}{flushright}
+  \printifnotempty{\textcolor{SedkGrey}{Keywords}}{\par}{\textcolor{SedkGrey}{\@keywords}}{\par}{flushright}
 }
+
+% Alternate Metadata box
+\newcommand{\metadata@boxed}{%
+  \begin{tcolorbox}[center,
+      width=0.9\linewidth,
+      colframe=SedK1,
+      boxrule=0.25pt,
+      arc=1.2mm,
+      left=3mm,
+      right=3mm,
+      top=2mm,
+      colback=white,
+    bottom=2mm]
+    \begin{multicols}{3}
+      \footnotesize
+      \begin{RaggedRight}
+        % \vspace*{8mm}
+        \printifnotempty{
+        \mdseries\textcolor{lightgray}{\raisebox{-1.2ex}{\LARGE\simpleicon{openaccess}}}}{\enspace}{\bfseries\normalsize\@articletype}{\par\vspace{9mm}}{flushleft}\par
+
+        \printifnotempty{Received:}{~}{\@receiveddate}{\par\vspace{2mm}}{flushleft}\par
+
+        \printifnotempty{Accepted:}{~}{\@accepteddate}{\par\vspace{2mm}}{flushleft}\par
+
+        \printifnotempty{Published:}{~}{\@publisheddate}{\par}{flushleft}\par
+      \end{RaggedRight}
+      \columnbreak
+      \begin{centering}
+        \printifnotempty{Executive Editor}{\par}{\@execedname}{\par\vspace{2mm}}{centering}\par
+
+        \printifnotempty{Associate Editor}{\par}{\@assocedname}{\par\vspace{2mm}}{centering}\par
+
+        \printifnotempty{Production Manager}{\par}{\@prodmanname}{\par\vspace{2mm}}{centering}\par
+
+        \printifnotempty{Production Assistant}{\par}{\@prodassist}{\par\vspace{2mm}}{centering}\par
+
+        \printifnotempty{Copy Editor}{\par}{\@copyedname}{\par}{centering}\par
+
+      \end{centering}
+      \columnbreak
+
+      \begin{RaggedLeft}
+        % \vspace*{8mm}
+        \printifnotempty{Reviewers}{\par}{\@reviewername}{\par\vspace{3mm}}{flushright}\par
+
+        \printifnotempty{\textcolor{SedkGrey}{Keywords}}{\par}{\textcolor{SedkGrey}{\@keywords}}{}{flushright}\par
+
+      \end{RaggedLeft}
+    \end{multicols}
+    % \metadata@vertical
+  \end{tcolorbox}
+}
+
+
 
 % ----------------------------------------------------------------------------------------
 %  basic formatting, declaration of styles
