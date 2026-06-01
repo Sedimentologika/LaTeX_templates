@@ -401,7 +401,7 @@ bib-item-sep = 8 pt plus 4 pt minus 2 pt}
     \bfseries\raggedleft%
     \setlength{\parskip}{\baselineskip}%
     \setlength{\parindent}{\z@}%
-    {This preprint was generated using the}{\\}{\promohref{https://github.com/Sedimentologika/templates}{\textit{Sedimentologika} \\ \LaTeX template}}
+    {This preprint was generated using the}{\\}{\promohref{https://github.com/Sedimentologika/templates}{\textit{Sedimentologika} \\ \LaTeX\ template}}
     \par
   \end{textblock*}
 }

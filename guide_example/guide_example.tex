@@ -441,13 +441,14 @@ Finally, aligned equations will look like this:
 \section{Referencing}
 
 Appropriate citation of work is mandatory.
-While peer-reviewed literature should be the primary sources on which you rely, material considered to be \textit{grey literature} such as pre-prints, theses, government reports, conference papers etc should be appropriately cited.
+While peer-reviewed literature should be the primary sources on which you rely, material considered to be \textit{grey literature} such as pre-prints, theses, government reports, conference papers etc. should be appropriately cited.
 
-The \Sedimentologika\space class uses the \href{https://ctan.org/pkg/citation-style-language}{citation-style-langauge} package for referencing.
+The \Sedimentologika\ class uses the \href{https://ctan.org/pkg/citation-style-language}{citation-style-langauge} package for referencing.
 Use \verb|\cite{}| for parenthetical citations, e.g., \cite{ExampleBook}, and \verb|\textcite{}| for in-line text citations, e.g., \textcite{ExampleArticle} stated that this is an awesome template.
 Prefixes, suffices, and pointers can be added as optional arguments, e.g.,
 \verb|\cite[prefix = {e.g., },|
-\verb|suffix={and references therein}]{ExampleThesis}|
+\verb|suffix={and references therein}]|
+\verb|{ExampleThesis}|
 will produce \cite[prefix = {e.g., }, suffix={and references therein}]{ExampleThesis}.
 
 The following is to enable generation of a reference list with examples for an article \cite{ExampleArticle}, book \cite{ExampleBook}, book section \cite{ExampleBookSection}, dataset \cite{ExampleDataset}, map \cite{ExampleMap}, preprint \cite{ExamplePreprint}, report \cite{ExampleReport}, software \cite{ExampleSoftware} and thesis \cite{ExampleThesis}.
@@ -498,6 +499,6 @@ Thanks for using the \Sedimentologika\space \LaTeX\space template for preparing 
   Declare sources of funding for this research.
 } % change as appropriate, this is mandatory if stating no external funding sources
 
-% \printbibliography % uncomment this when you've added you reference library file.
+\printbibliography % uncomment this when you've added you reference library file.
 
 \end{document}

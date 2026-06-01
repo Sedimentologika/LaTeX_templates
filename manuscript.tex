@@ -1,13 +1,13 @@
 % ======================================================================================== %
 %       LaTeX pre-print and submission and production template for Sedimentologika         %
-%             v1.1.0 - March 2026, Sedimentologika Steering Committee                    %
+%             v1.1.1 - April 2026, Sedimentologika Steering Committee                    %
 % ======================================================================================== %
 %    This template and corresponding class are provided as is. Sedimentologika takes no
 %                  responsibility for your misuse of the provided files.
 %
 %                       It MUST be compiled using LuaLaTeX.
 %             TeXLive 2024 or higher, and Overleaf should work without issue.
-%                         Tested on TeXLive 2025, Overleaf
+%                         Tested on TeXLive 2025, 2026, Overleaf
 %
 %   There are comments throughout this tex file to assist you in generating your document.
 %
@@ -151,9 +151,6 @@
 \authorshdr{}
 \metaauthlist{}
 
-% \AtEndPreamble{
-%   \input{articlemetadata.tex}
-% }
 %
 % ======================================================================================== %
 %              Primary Article Information (tile, authors, contributions)                  %
@@ -208,7 +205,7 @@
 %                             Additional Document Setup                                    %
 % ======================================================================================== %
 %                           Bibliography file - REQUIRED                                   %
-% \addbibresource{Example.json} % replace Example.json with your csl .json or .bib file
+% \addbibresource{} % replace Example.json with your csl .json or .bib file
 %                        The ref style is already set to APA7
 %
 %                                Acceptable figure types
@@ -223,7 +220,7 @@
 %     distributions.
 %
 % \usepackage{packagename}
-
+\fxsetup{status=draft,layout=pdfcnote}
 %
 % ======================================================================================== %
 %                                    Manuscript                                            %
@@ -306,7 +303,7 @@ This is a mandatory section, replace this text.
 
 \funding{
   Declare sources of funding for this research.
-} % change as appropriate, this is mandatory if stating no external funding sources
+} % change as appropriate, this is mandatory even if stating no external funding sources
 
 % \printbibliography % uncomment this when you've added you reference library file.
 
