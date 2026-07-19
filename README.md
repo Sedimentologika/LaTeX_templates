@@ -71,7 +71,7 @@ Please see the section on [troubleshooting](#troubleshooting) if you need assist
 ## Usage
 
 _Sedimentologika_ has a few minimal requirements for articles submitted.
-It is **strongly** suggested that you read the _Sedimentologika_ [manuscript](https://oap.unige.ch/journals/sdk/manuscript-guidelines) and the [figure](https://oap.unige.ch/journals/sdk/figures-tables-guidelines#figures) and [table](https://oap.unige.ch/journals/sdk/figures-tables-guidelines#tables) guidelines whilst writing your article.
+It is **strongly** suggested that you read the _Sedimentologika_ [manuscript](https://sedimentologika.org//manuscript-guidelines) and the [figure](https://sedimentologika.org//figures-tables-guidelines#figures) and [table](https://sedimentologika.org//figures-tables-guidelines#tables) guidelines whilst writing your article.
 
 ### TLDR
 
