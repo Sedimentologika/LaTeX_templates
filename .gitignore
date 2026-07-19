@@ -3,6 +3,9 @@
 #
 # SPDX-License-Identifier: CC0-1.0
 
+## Zip files for release
+*.zip
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
