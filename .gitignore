@@ -328,13 +328,9 @@ TSWLatexianTemp*
 # ignore intermediate files in subdir guide_example
 guide_example/*
 !guide_example/figures/
-!guide_example/figures/*.pdf
-!guide_example/tables/
-!guide_example/tables/*.tex
-!guide_example/*.cls
 !guide_example/*.tex
 !guide_example/*.json
-!guide_example/*.pdf
+!guide_example/prebuilt_pdfs/*.pdf
 
 # REVTeX puts footnotes in the bibliography by default, unless the nofootinbib
 # option is specified. Footnotes are the stored in a file with suffix Notes.bib.
