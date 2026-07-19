@@ -1,18 +1,25 @@
+% SPDX-FileCopyrightText: Copyright © 2026-present Sedimentologika
+% SPDX-FileContributor: Jarred C. Lloyd
+%
+% SPDX-License-Identifier: LPPL-1.3c
+
 % ======================================================================================== %
 %       LaTeX pre-print and submission and production template for Sedimentologika         %
-%             v1.1.0 - March 2026, Sedimentologika Steering Committee                    %
+%             v1.1.2 - July 2026, Sedimentologika Steering Committee                    %
 % ======================================================================================== %
 %    This template and corresponding class are provided as is. Sedimentologika takes no
 %                  responsibility for your misuse of the provided files.
 %
 %                       It MUST be compiled using LuaLaTeX.
 %             TeXLive 2024 or higher, and Overleaf should work without issue.
-%                         Tested on TeXLive 2025, Overleaf
+%                         Tested on TeXLive 2024, 2025, 2026
+%      Note: free accounts on Overleaf may time out during compilation due to the use of
+%             unicode-math. We will switch to lua-unicode-math when it in future.
 %
 %   There are comments throughout this tex file to assist you in generating your document.
 %
 %      If you are unable to compile your document and are using LuaLaTeX, first consult
-%                the readme.txt file, then if you need further assistance
+%                the README.md file, then if you need further assistance
 %                       contact us via support@sedimentologika.org
 %
 %     If you discover a reproducible bug, please document the steps to reproduce it and
@@ -24,7 +31,7 @@
 % INSTRUCTION: change the content in square brackets to suit your needs using the below
 % options
 % ---------------------------------------------------------------------------------------- %
-\documentclass[preprint]{sedimentologika}
+\documentclass[proof]{sedimentologika}
 % ---------------------------------------------------------------------------------------- %
 %
 % [preprint] to enable pre-print styling
@@ -32,8 +39,9 @@
 % INSTRUCTION: If generating a pre-print, review the below statement and alter to
 % your needs.
 \preprintdeclaration{
-  This is a guide and example file for the \textit{Sedimentologika} \LaTeX\space template.
-  }
+  This is a pre-print and has not yet undergone peer-review.
+  It has been submitted to \textit{Sedimentologika}.
+}
 %
 % [submission] to enable submission styling suitable for Sedimentologika
 %
@@ -149,16 +157,13 @@
 \reviewername{}
 \authorshdr{Diamictite et al.}
 \metaauthlist{Adelaide Diamictite, Petra Sandstone, Dover Limestone, Jasper, Cowell Jade}
-
-% \AtEndPreamble{
-%   \input{articlemetadata.tex}
-% }
+%
 %
 % ======================================================================================== %
 %              Primary Article Information (tile, authors, contributions)                  %
 % ======================================================================================== %
-\title{This is a long title} % Replace this with your articles full title, no length limit, but keep it reasonable
-\shorttitle{A short title} % Replace "A short title", it should be ≤ 50 characters long.
+\title{This is the Sedimentologika \LaTeX\space template example and build test} % Replace this with your articles full title, no length limit, but keep it reasonable
+\shorttitle{Sedimentologika \LaTeX\space template example} % Replace "A short title", it should be ≤ 50 characters long.
 % ---------------------------------------------------------------------------------------- %
 %                          Instructions for author list.                                   %
 %
@@ -206,13 +211,13 @@
 \CRediT{Funding acquisition}{PS}
 %
 % ---------------------------------------------------------------------------------------- %
-\keywords{Keyword 1\\Keyword 2} % List up to five keywords, separated by \\
+\keywords{example\\guide\\template\\reference file} % List up to five keywords, separated by \\
 %
 % ======================================================================================== %
 %                             Additional Document Setup                                    %
 % ======================================================================================== %
 %                           Bibliography file - REQUIRED                                   %
-\addbibresource{guide_example-bibiliography.json} % replace Example.json with your csl .json or .bib file
+\addbibresource{Sedimentologika-example-bibiliography.json} % replace Example.json with your csl .json or .bib file
 %                        The ref style is already set to APA7
 %
 %                                Acceptable figure types
@@ -242,20 +247,19 @@
 {% Abstract
   This is a test abstract used for evaluating the build of an article using the \Sedimentologika\space \LaTeX\space template using Lua\LaTeX.
   It contains no meaningful scientific content, but contains useful guidelines for writing your article using the template.
-  \textbf{Your} abstract will need to fit within the first page.
-  You can use \textcolor{violet}{\textbackslash documentclass[preprint]\{sedimentologika\}} to test if your abstract is too long.
-  If too long, they will print over the text in the lower left of the first page.
 
-  We encourage authors to provide a translation of your abstract into a language of your choice.
-  If you wish to provide multiple translations, please contact the editorial team.
-
-  If your translation language requires special fonts (e.g., Arabic), instructions are available in the template file and the readme.md file.
-  Should you need further help with this, please contact the editorial team \href{mailto:admin@sedimentologika.org}{admin@sedimentologika.org}.
+  If your author and affiliation lists and CRediT roles are long, the abstract may run over the first page in `preprint' mode.
+  If this is the case, please attempt to shorten your abstract; however, if it is not reasonably possible please contact \href{malito:support@sedimentologika.org}{support@sedimentologika.org}.
+  Use \textcolor{violet}{\textbackslash documentclass[preprint]\{sedimentologika\}} to test the length of your abstract.
 }
 {
-  \translation{french}{Résumé}{
-    Il s’agit d’un résumé fictif utilisé pour évaluer la compilation d’un article à l’aide du modèle \LaTeX de \Sedimentologika  avec Lua\LaTeX.
-  Il ne contient aucun contenu scientifique significatif, mais fournit des instructions utiles pour rédiger votre article à l’aide de ce modèle.}
+  \translation{australian}{Translations}{
+    We encourage authors to provide a translation of your abstract and plain language summary into a language of your choice.
+    If you wish to provide multiple translations, please contact the editorial team for guidance
+
+    If your translation language requires special fonts (e.g., Arabic), instructions are available in the template file and the README.md file.
+    Should you need further help with this, please contact the editorial team \href{mailto:admin@sedimentologika.org}{admin@sedimentologika.org}.
+  }
 }
 
 % ---------------------------------------------------------------------------------------- %
@@ -281,27 +285,77 @@ Simply use \textcolor{violet}{\textbackslash documentclass[preprint]\{sedimentol
 
 Like the policy of \href{https://seismica.library.mcgill.ca/author-guidelines#manuscript-preparation}{Seismica}, we do not require authors to use this template at initial submission.
 \textbf{However}, \href{https://oap.unige.ch/journals/sdk/manuscript-guidelines}{minimum formatting requirements} apply and upon acceptance authors using \LaTeX\space should submit their final version using the \Sedimentologika\space \LaTeX\space template.
-Not using the template will incur delays in copy-editing, proofing, and publication,
-For authors using Microsoft Word or LibreOffice etc, there will be greater delays incurred depending on the complexity of the document.
+Not using the template may incur delays in copy-editing, proofing, and publication,
+For authors using Microsoft Word or LibreOffice etc, there may be greater delays incurred depending on the complexity of the document.
 
 \section{Minimum formatting and layout requirement}
 
 While \Sedimentologika\space strongly encourages the use of our templates for articles submitted to the journal, you may submit your article without using the templates if the following conditions are met:
 
 \begin{itemize}
-  \item Your article is written in English
-  \item Your manuscript is a single PDF, DOC, DOCX, or ODT file containing all figures and in-text tables, in their appropriate place.
+  \item Your article is written in a single dialect of English
+  \item Your manuscript is a single PDF, DOC, DOCX, or ODT file containing all figures and in-text tables.
   \item Your data is made accessible via a repository such as Zenodo.
   \item You have added to your manuscript the following statements, after the conclusions and before the references
   \item Data and code availability
   \item Conflict of interest statement
   \item Artificial intelligence use statement
-  \item Funding
+  \item Funding declaration
 \end{itemize}
 
 \section{Language}
 
-\Sedimentologika\space encourages the use of
+All submitted documents must be in English.
+Authors are required to use a single variety of English consistently throughout the manuscript, such as Australian, British, Canadian, Commonwealth, or US English.
+
+While \Sedimentologika\space requires manuscripts to be written in English, we encourage authors to provide an abstract and plain language summary translation in their preferred language of choice.
+
+Submitted documents should be thoroughly proof-read prior to submission to ensure they are free from grammatical and spelling errors.
+
+Abbreviations that are not standard to the field are not to be used in the abstract and should be introduced in the corpus of the text.
+The use of standard abbreviations such as “Fm.” or “Mbr” respectively, for “Formation” or “Member” should be reserved for figures and tables, while full-length words are used in the corpus of the manuscript.
+
+All units must be from the \href{https://www.bipm.org/en/measurement-units}{International System of Units} or derivative thereof (i.e. metres rather than feet or kPa rather than PSI).
+Customary/non-SI units may be included in parentheses.
+
+Utilise the commands and options available in \href{https://mirrors.ctan.org/macros/latex/contrib/siunitx/siunitx-code.pdf}{siunitx} for any quantity or number.
+\begin{itemize}
+    \item \textbackslash ang[options]\{angle\}
+    \item \textbackslash num[options]\{number\}
+    \item \textbackslash unit[options]\{unit\}
+    \item \textbackslash qty[options]\{number\}\{unit\}
+    \item \textbackslash numlist[options]\{numbers\}
+    \item \textbackslash numproduct[options]\{numbers\}
+    \item \textbackslash numrange[options]\{numbers\}\{number2\}
+    \item \textbackslash qtylist[options]\{numbers\}\{unit\}
+    \item \textbackslash qtyproduct[options]\{numbers\}\{unit\}
+    \item \textbackslash qtyrange[options]\{number1\}\{number2\}\{unit\}
+\end{itemize}
+
+\subsection{Inclusive Language}
+
+\Sedimentologika\space strongly encourages authors and co-authors to use inclusive and non-discriminatory language in their manuscripts.
+The American Psychological Association (APA) has produced a guide you may find useful for this purpose, which you can obtain from \href{https://www.apa.org/about/apa/equity-diversity-inclusion/language-guidelines}{apa.org}.
+
+Scientific research is always a team effort.
+Therefore, we encourage using “we” about the authors as much as using passive voice or third person.
+
+\Sedimentologika\space encourages authors to use both traditional place names and their English equivalents, where appropriate, to acknowledge the cultural significance and diversity of the regions being described, e.g., "the Kaikōura Canyon is located east of Te Wāhipounamu (the South Island of Aotearoa/New Zealand)".
+
+When applicable, acknowledgement of traditional custodians and their lands should be added.
+
+\subsection{Politically Sensitive Geographic Names}
+
+As Earth Scientists, we often use geospatial data.
+In some cases the geographic name of a location may be disputed, or the border of a territory has not been honoured or is disputed.
+
+For cases of geographic name disputes (e.g. Gulf of Mexico/Gulf of America), authors should first determine if an arbitration decision has been made, for example under the UNCLOS, and use that name.
+If no such decision has been made, authors should use the name which is most recognised internationally, refer to appropriate United Nations maps (\href{https://www.un.org/geospatial/content/map-world-1}{e.g. UN Map of the World}), or provide both names.
+The intent is to ensure the name used is as neutral as possible.
+
+\subsection{Geologic Time}
+
+For geologic time, please use nomenclature of the International Chronostratigraphic Chart, the latest version can be found at \href{https://stratigraphy.org/chart/}{text}.
 
 \section{Figures and tables}
 
@@ -313,12 +367,12 @@ You can test the appearance of your tables and figures in this layout by using t
 
 \subsection{Dimensions}
 
-It is best practice to design and proof your figures and tables at their intended final size.
+It is best practice to design and test your figures and tables at their intended final size.
 Figures and tables should preferably be designed to fit within either a singe column (e.g., \autoref{fig:KatiThanda}) or across two columns (e.g., \autoref{fig:DepoEnv}) in portrait page mode.
 However, landscape figures and tables are allowable, but only use these if absolutely required for legibility.
 \autoref{TBL:ftwidths} summarises the maximum dimensions allowable for figures and tables that fit within a single page.
 
-\begin{table}[th]
+\begin{table}[ht]
   \small
   \begin{NiceTabular*}{1.0\onecolwidth}{l l l}
     \toprule
@@ -333,7 +387,7 @@ However, landscape figures and tables are allowable, but only use these if absol
   \label{TBL:ftwidths}
 \end{table}
 
-\begin{figure}
+\begin{figure}[!t]
   \frame{\includegraphics[width=1.0\onecolwidth]{figures/KatiThandaSentinel20251018.pdf}}
   \caption{Sentinel 2 L2A imagery (2025-10-18) of north-eastern Kati Thanda-Lake Eyre at the Warburton River discharge.
     \textbf{(A)} True colour image mapping bands 4, 3, and 2 to R, G, and B channels.
@@ -342,28 +396,30 @@ However, landscape figures and tables are allowable, but only use these if absol
   }\label{fig:KatiThanda}
 \end{figure}
 
-\begin{figure*}
+\begin{figure*}[!t]
   \frame{\includegraphics[width=1\twocolwidth]{figures/DepoEnv.pdf}}
   \caption{Schematic diagram of the main depositional environments in sedimentary systems.
     Source: \textcite{Mikenorton2018}
   }\label{fig:DepoEnv}
 \end{figure*}
 
-If a figure is being placed at the end of the document rather than near its insertion point use \verb|\clearpage| directly after the figure environment.
+If a figure is being placed at the end of the document rather than near its insertion point define the figure optional position argument using a \texttt{!} or use \verb|\clearpage| directly after the figure environment.
 
 \subsection{Figure design}
 
 Figures must be designed with accessibility in mind.
 Do not rely on colour alone, use symbols or patterns to assist with differentiation on graphs and other diagrams.
 
-Preferably use the \href{https://fonts.google.com/noto/specimen/Noto+Sans}{Noto Sans} font family, however any standard, sans-serif font (e.g., Arial, Helvetica, Verdana) can be used.
+Preferably use the \href{https://fonts.google.com/noto/specimen/Noto+Sans}{Noto Sans} font family as that is what we use for final production.
+However, any standard, sans-serif font (e.g., Arial, Helvetica, Verdana) can be used.
 Be consistent and only use one font family.
 
 Use at most three (preferably no more than two) different font sizes for annotations on figures.
-The standard font size should be \qty{12}{pt}, and the absolute minimum font size should be \qty{6}{pt} depending on the font family, or \qty{2}{\milli\metre} at final production size.
-Aim to use larger font sizes (e.g., \qty{12}{pt}) to improve accessibility.
+The standard font size should be \qty{10}{pt} Noto Sans or equivalent.
+Regardless of font choice, the minimum character height must be no less than \qty{4.8}{\milli\metre} at final production size for accessibility purposes.
+Aim to use larger font sizes (e.g., \qty{10}{pt} Noto Sans) to improve accessibility.
 
-Colour schemes must be colour-vision deficiency safe.
+Colour schemes \textbf{must} be colour-vision deficiency safe (e.g.\href{https://zenodo.org/records/8409685}{Scientific Colour Maps}).
 
 \subsection{Maps}
 
@@ -383,12 +439,29 @@ For figures with sub-panels, add uppercase letters for indexing purposes as show
 If additional sub-indices are required, use parenthesised lowercase Roman numerals, e.g., A(i).
 
 \subsection{Table formatting}
+Complex tables present a significant challenge in \LaTeX\space for our volunteer production team.
+Please only use tables where needed, and keep them simple.
+Complex tables will incur production delays.
+
+Use a table only if there isn’t a simpler way to present your content, such as a paragraph of text or figure.
+Each table must be independently understandable, with a clear title or caption, defined abbreviations, and sufficient explanatory notes where needed.
+Tables should be numbered sequentially in the order they are cited in the manuscript.
+Design tables for readability and accessibility.
+The minimum font size should be Noto Sans 8 pt (or equivalent).
+Keep tables simple:
+\begin{itemize}
+  \item use simple structure, clear column headings, consistent terminology, and SI units;
+  \item avoid excessive decimal places, duplicated information, empty cells without explanation, and unnecessary formatting;
+  \item do not use colour alone to communicate meaning.
+\end{itemize}
+
+Large or highly detailed datasets should be deposited in an appropriate repository and cited in the data availability statement rather than included as oversized manuscript tables.
+Datasets provided in a form such as CSV, ODS, XLSX, RData, JLD2, HDF5 etc. are better for study reproducibility.
 
 Tables rules are formatted using \href{http://mirrors.ctan.org/macros/latex/contrib/booktabs/booktabs.pdf}{booktabs}.
 This means you can use the \verb|\toprule|, \verb|\midrule|, and \verb|\bottomrule| commands within the \verb|tabular| environment.
 
-The \verb|NiceTabular*| package is also loaded, providing any easy ability to have a column automatically adjust it's spacing to be flexible.
-Use \verb|X| in the width of the column(s) you want to be flexibly adjusted.
+The \href{http://mirrors.ctan.org/macros/latex/contrib/nicematrix/nicematrix.pdf}{nicematrix} package is also loaded, providing customisation for blocks and the \verb|X| for the flexible column widths.
 
 \autoref{TBL:ftwidths} is a simple example of a one-column wide table with correct styling and using the \verb|NiceTabular*| environment.
 
@@ -400,12 +473,14 @@ To ensure correct widths of tables, please use the provided custom commands
 as the size of your \verb|NiceTabular*| or \verb|tabular*| environment.
 
 For tables that will extend beyond a single page, \verb|longtable| is available.
-If the \verb|longtable| needs to be two columns wide, or in landscape orientation, please see the \verb|example_longtable.tex| and \verb|example_landscape_table.tex| for an example of how to format these.
+If the \verb|longtable| needs to be two columns wide, or in landscape orientation, please see the \verb|example_longtable.tex| for an example of how to format these.
+We have placed the longtable at the end of this build to not clutter the primary information.
 
-To place a table that is only a single page column wide (i.e. small tables), use the \verb|table| environment.
+To place a table that is only a single column wide (i.e. small tables), use the \verb|table| environment.
 
 Otherwise, use the \verb|table*| environment to place a table that will span both page columns.
-For all \verb|table*| environments, precede them with a \verb|\clearpage| command.
+
+\textit{NOTE:} \verb|nicematrix| and \verb|longtable| will not work in the same table.
 
 \section{Mathematics}
 
@@ -438,12 +513,18 @@ Finally, aligned equations will look like this:
   \sum\nolimits{{x_i}^3\left(x_i-\varepsilon_1\right)\left(x_i-\varepsilon_2\right)\left(x_i-\varepsilon_3\right)\left(x_i\ -\ \varepsilon_4\right)}=0
 \end{align}
 
+\section{Chemical equations}
+The \href{https://mirrors.ctan.org/macros/latex/contrib/mhchem/mhchem.pdf}{{mhchem}} package is enabled in the template.
+Use \verb|\ce{}| to wrap your chemistry.
+For example, \verb|\ce{^{87}_{37}{Rb}+}| prints \ce{^{87}_{37}{Rb}+}.
+
 \section{Referencing}
 
 Appropriate citation of work is mandatory.
 While peer-reviewed literature should be the primary sources on which you rely, material considered to be \textit{grey literature} such as pre-prints, theses, government reports, conference papers etc. should be appropriately cited.
 
-The \Sedimentologika\ class uses the \href{https://ctan.org/pkg/citation-style-language}{citation-style-langauge} package for referencing.
+The \Sedimentologika\ class uses the \href{https://mirrors.ctan.org/biblio/citation-style-language/citation-style-language-doc.pdf}{citation-style-langauge} package for referencing.
+
 Use \verb|\cite{}| for parenthetical citations, e.g., \cite{ExampleBook}, and \verb|\textcite{}| for in-line text citations, e.g., \textcite{ExampleArticle} stated that this is an awesome template.
 Prefixes, suffices, and pointers can be added as optional arguments, e.g.,
 \verb|\cite[prefix = {e.g., },|
@@ -452,10 +533,6 @@ Prefixes, suffices, and pointers can be added as optional arguments, e.g.,
 will produce \cite[prefix = {e.g., }, suffix={and references therein}]{ExampleThesis}.
 
 The following is to enable generation of a reference list with examples for an article \cite{ExampleArticle}, book \cite{ExampleBook}, book section \cite{ExampleBookSection}, dataset \cite{ExampleDataset}, map \cite{ExampleMap}, preprint \cite{ExamplePreprint}, report \cite{ExampleReport}, software \cite{ExampleSoftware} and thesis \cite{ExampleThesis}.
-
-\section{Geologic Time}
-
-For geologic time, please use nomenclature of the International Chronostratigraphic Chart, the latest version can be found at \href{https://stratigraphy.org/chart/}{text}.
 
 \section{Conclusions}
 This is a mandatory section, replace this text.
@@ -500,5 +577,12 @@ Thanks for using the \Sedimentologika\space \LaTeX\space template for preparing 
 } % change as appropriate, this is mandatory if stating no external funding sources
 
 \printbibliography % uncomment this when you've added you reference library file.
+
+% ---------------------------------------------------------------------------------------- %
+%                              Long table example
+% ---------------------------------------------------------------------------------------- %
+\onecolumn
+\input{example_longtable.tex} % a way to keep complicated, or long tables from cluttering this main file.
+\twocolumn
 
 \end{document}

@@ -1,29 +1,7 @@
-% ======================================================================================== %
-%       LaTeX pre-print and submission and production template for Sedimentologika         %
-%             v1.1.1 - April 2026, Sedimentologika Steering Committee                    %
-% ======================================================================================== %
-%    This template and corresponding class are provided as is. Sedimentologika takes no
-%                  responsibility for your misuse of the provided files.
+% SPDX-FileCopyrightText: Copyright © 2026-present Sedimentologika
+% SPDX-FileContributor: Jarred C. Lloyd
 %
-%                       It MUST be compiled using LuaLaTeX.
-%             TeXLive 2024 or higher, and Overleaf should work without issue.
-%                         Tested on TeXLive 2025, 2026, Overleaf
-%
-%   There are comments throughout this tex file to assist you in generating your document.
-%
-%      If you are unable to compile your document and are using LuaLaTeX, first consult
-%                the readme.txt file, then if you need further assistance
-%                       contact us via support@sedimentologika.org
-%
-%     If you discover a reproducible bug, please document the steps to reproduce it and
-%                      let the team know via support@sedimentologika.org
-%
-% ======================================================================================== %
-%                                    Document class                                        %
-% ======================================================================================== %
-% INSTRUCTION: change the content in square brackets to suit your needs using the below
-% options
-% ---------------------------------------------------------------------------------------- %
+% SPDX-License-Identifier: LPPL-1.3c
 \documentclass[preprint]{sedimentologika}
 % ---------------------------------------------------------------------------------------- %
 %
@@ -150,7 +128,7 @@
 \reviewername{}
 \authorshdr{}
 \metaauthlist{}
-
+%
 %
 % ======================================================================================== %
 %              Primary Article Information (tile, authors, contributions)                  %
@@ -215,7 +193,7 @@
 
 % ---------------------------------------------------------------------------------------- %
 %                              Extra packages you need
-% Review the packages listed in the readme.txt, add any additional ones you need here.
+% Review the packages listed in the README.md, add any additional ones you need here.
 %     They should be readily available via CTAN or in the TeXLive 2024 or newer
 %     distributions.
 %
@@ -230,19 +208,22 @@
 \SedKtitle{% plain langauge summary %
   Replace this text with your \textbf{plain language summary}.
   This section is mandatory.
-  The content should be a simplified summary of the article, suitable for non-experts.
-  It should not exceed 1000 characters including spaces.
-  The combined lengths of the abstract and plain language summary are somewhat flexible depending on the number of authors, affiliations, and CRedIT statement.
+  The content is a simplified summary of the article, suitable for non-experts.
+  It should be as clear and concise as possible.
 }
 {% abstract %
   Replace this text with your \textbf{abstract}.
   This section is mandatory.
-  The content should be a summary of your article.
-  It should not exceed 2000 characters including spaces.
-  The combined lengths of the abstract and plain language summary are somewhat flexible depending on the number of authors, affiliations, and CRedIT statement.
+  The content is a summary of your article.
+  If your author and affiliation lists and CRediT roles are long, the abstract may run over the first page in `preprint' mode.
+  If this is the case, please attempt to shorten your abstract; however, if it is not reasonably possible please contact \href{malito:support@sedimentologika.org}{support@sedimentologika.org}.
 }
-{% translations of abstract and plain language summary %
-  %\translation{language}{AbstractTranslationTitle}{Replace this text with the translation of your abstract if you are providing one. Remember to set the language to the appropriate \href{https://ctan.org/pkg/babel}{babel language code}. Otherwise, comment out this section.}
+{% translations %
+    \translation{australian}{Abstract}{
+    This section may be used to provide translations of the abstract and plain language summary.
+    Use \texttt{\textbackslash translation\{language\}\{section\}\{text\}} where \texttt{language} is the \href{https://ctan.org/pkg/babel}{babel language name} (e.g. \texttt{french}), \texttt{section} is the literal translation of `Abstract' or `Plain language summary', e.g. `Résumé' or `Résumé vulgarisé' respectively for French.
+    }
+    %\translation{french}{Résumé}{Résumé texte}
 }
 
 % ---------------------------------------------------------------------------------------- %
@@ -275,12 +256,12 @@ This is a mandatory section, replace this text.
   Replace this text with your acknowledgements.
 }
 
-% This is your data (and code) availability statement - it is mandatory, you must make your
-% data and code available via a repository such as Zenodo (Data), GitHub (Code - use Zenodo
-% to generate a doi see https://help.zenodo.org/docs/github/) etc.
+% This is your data (and code) availability statement - it is mandatory.
+% You must make your data and code available via a repository such as Zenodo (Data), GitHub
+% (Code - use Zenodo to generate a doi see https://help.zenodo.org/docs/github/) etc.
 %
 % "Available upon request" is not an allowable statement.
-% Please contact Sedimentologika if your data cannot be made available due to legal reasons
+%  Please contact Sedimentologika if your data cannot be made available due to legal reasons
 %
 \datacode{
   Data used in this paper is hosted on Zenodo at \href{https://doi.org/10.1000/182}{doi.org/10.1000/182}, \verb|\cite{ExampleCitation}|.

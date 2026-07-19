@@ -1,9 +1,14 @@
+% SPDX-FileCopyrightText: Copyright © 2026-present Sedimentologika
+% SPDX-FileContributor: Jarred C. Lloyd
+%
+% SPDX-License-Identifier: LPPL-1.3c
+
 % ----------------------------------------------------------------------------------------
 % Document class for Sedimentologika, a community-driven Diamond Open Access journal publishing research in sedimentology and stratigraphy.
 % https://oap.unige.ch/journals/sdk/
 % Current version with inputs from:
 % Jarred C Lloyd
-% Last updated: 2026-04-06
+% Last updated: 2026-07-19
 % Derived from seismica.cls, and WeAreAGC submission template.
 
 % ----------------------------------------------------------------------------------------
@@ -657,7 +662,7 @@ bib-item-sep = 8 pt plus 4 pt minus 2 pt}
   {}
   {\thepage}
   \renewcommand{\makeheadrule}{\rule[-0.35\baselineskip]{\linewidth}{0.25pt}}
-  \renewcommand{\makefootrule}{\rule[0.65\baselineskip]{\linewidth}{0.25pt}}
+  \renewcommand{\makefootrule}{\rule[0.5\baselineskip]{\linewidth}{0.25pt}}
 }
 
 \newpagestyle{ps_preprint_first}[\scriptsize]{
@@ -676,7 +681,7 @@ bib-item-sep = 8 pt plus 4 pt minus 2 pt}
   {}
   {\thepage}
   \renewcommand{\makeheadrule}{\rule[-0.35\baselineskip]{\linewidth}{0.25pt}}
-  \renewcommand{\makefootrule}{\rule[0.65\baselineskip]{\linewidth}{0.25pt}}
+  \renewcommand{\makefootrule}{\rule[0.5\baselineskip]{\linewidth}{0.25pt}}
 }
 
 % ---------------------------------
@@ -697,8 +702,8 @@ bib-item-sep = 8 pt plus 4 pt minus 2 pt}
   {\textcolor{SedK2}{Manuscript submitted to Sedimentologika}}
   {}
   {\thepage}
-  \renewcommand{\makeheadrule}{\rule[-0.35\baselineskip]{\linewidth}{0.25pt}}
-  \renewcommand{\makefootrule}{\rule[0.65\baselineskip]{\linewidth}{0.25pt}}
+  \renewcommand{\makeheadrule}{\rule[-0.25\baselineskip]{\linewidth}{0.25pt}}
+  \renewcommand{\makefootrule}{\rule[0.35\baselineskip]{\linewidth}{0.25pt}}
 }
 
 \newpagestyle{ps_submission_first}[\scriptsize]{
@@ -715,7 +720,7 @@ bib-item-sep = 8 pt plus 4 pt minus 2 pt}
   {\textcolor{SedK2}{Manuscript submitted to Sedimentologika}}
   {}
   {\thepage}
-  \renewcommand{\makefootrule}{\rule[0.65\baselineskip]{\linewidth}{0.25pt}}
+  \renewcommand{\makefootrule}{\rule[0.35\baselineskip]{\linewidth}{0.25pt}}
 }
 
 % ---------------------------------
@@ -736,8 +741,8 @@ bib-item-sep = 8 pt plus 4 pt minus 2 pt}
   {\textcolor{SedK2}{\textbf{SEDIMENTOLOGIKA}~\textbullet~PROOF}}
   {}
   {\textcolor{SedK2}{\thepage}}
-  \renewcommand{\makeheadrule}{\color{SedK1}\rule[-0.35\baselineskip]{\linewidth}{0.25pt}}
-  \renewcommand{\makefootrule}{\color{SedK1}\rule[0.65\baselineskip]{\linewidth}{0.25pt}}
+  \renewcommand{\makeheadrule}{\color{SedK1}\rule[-0.25\baselineskip]{\linewidth}{0.25pt}}
+  \renewcommand{\makefootrule}{\color{SedK1}\rule[0.5\baselineskip]{\linewidth}{0.25pt}}
 }
 
 \newpagestyle{ps_proof_first}[\scriptsize]{
@@ -759,7 +764,7 @@ bib-item-sep = 8 pt plus 4 pt minus 2 pt}
   {\textcolor{SedK2}{PROOF~\today}}
   {}
   {\textcolor{SedK2}{\thepage}}
-  \renewcommand{\makefootrule}{\color{SedK1}\rule[0.65\baselineskip]{\linewidth}{0.25pt}}
+  \renewcommand{\makefootrule}{\color{SedK1}\rule[0.5\baselineskip]{\linewidth}{0.25pt}}
 }
 
 % ---------------------------------
@@ -780,8 +785,8 @@ bib-item-sep = 8 pt plus 4 pt minus 2 pt}
   {\textbf{SEDIMENTOLOGIKA}~\textbullet~\@theyear~\textbar~Volume~\@volumenumber,~Issue~\@issuenumber}
   {}
   {\textcolor{SedK2}{\thepage}}
-  \renewcommand{\makeheadrule}{\color{SedK1}\rule[-0.35\baselineskip]{\linewidth}{0.25pt}}
-  \renewcommand{\makefootrule}{\color{SedK1}\rule[0.65\baselineskip]{\linewidth}{0.25pt}}
+  \renewcommand{\makeheadrule}{\color{SedK1}\rule[-0.25\baselineskip]{\linewidth}{0.25pt}}
+  \renewcommand{\makefootrule}{\color{SedK1}\rule[0.5\baselineskip]{\linewidth}{0.25pt}}
 }
 
 \newpagestyle{ps_publication_first}[\scriptsize]{
@@ -809,7 +814,7 @@ bib-item-sep = 8 pt plus 4 pt minus 2 pt}
   }
   {}
   {\textcolor{SedK2}{\thepage}}
-  \renewcommand{\makefootrule}{\color{SedK1}\rule[0.65\baselineskip]{\linewidth}{0.25pt}}
+  \renewcommand{\makefootrule}{\color{SedK1}\rule[0.5\baselineskip]{\linewidth}{0.25pt}}
 }
 
 % ----------------------------------------------------------------------------------------
