@@ -4,6 +4,7 @@ SPDX-FileContributor: Jarred C. Lloyd
 
 SPDX-License-Identifier: MPL-2.0
 -->
+
 # Sedimentologika class and template files
 
 This read me provides a comprehensive guide for the use of the _Sedimentologika_ LaTeX template.
@@ -64,6 +65,7 @@ Both the `guide_example.tex` and `manuscript.tex` files should build successfull
 ```tex
 lualatex manuscript.tex
 ```
+
 (you'll probably need to run it two or three times)
 
 Please see the section on [troubleshooting](#troubleshooting) if you need assistance.
@@ -96,21 +98,23 @@ Use the `manuscript.tex` file to create your document, you can rename it to what
 
 You must:
 
-* Use **one** dialect of English for the document (e.g. American OR Australian OR UK).
-* Provide a non-technical plain language summary.
-* Provide a [CRediT](https://doi.org/10.5281/zenodo.18421449) author declaration
-* Provide the following statements (even if simply to state there are none)
-  * Acknowledgements
-  * Conflict of interest
-  * Funding
-  * Artificial intelligence use
-* Make accessible all data and code used in the study following the [FAIR principles](https://doi.org/10.1038/sdata.2016.18).
-  * Preferably via zenodo, GitHub, figshare, PANGAEA etc. as it will provide a DOI and a citation for your data/code.
-* When using colour schemes in figures, **ensure** that they are accessible.
-  * [Scientific colour maps](https://doi.org/10.5281/zenodo.8409685) provides several ready to use schemes for many applications and programming languages.
-  * Use sans-serif fonts, minimum size ≥ 6 pt (Noto Sans or equivalent size)
-    * the absolute minimum character size should be ≥ 4.8 mm when reproduced at final output size.
-  * Use tools like [DaltonLens](https://daltonlens.org/), [Coblis](https://www.color-blindness.com/coblis-color-blindness-simulator/), [Chroma.js Colour Palette Helper](https://gka.github.io/palettes/), and [ContrastGrid](https://contrast-grid.eightshapes.com)
+- Use **one** dialect of English for the document (e.g. American OR Australian OR UK).
+- Your manuscript is a single PDF, DOC, DOCX, or ODT file containing all figures and in-text tables.
+- Provide a non-technical plain language summary.
+- Provide a [CRediT](https://doi.org/10.5281/zenodo.18421449) author declaration
+- Provide the following statements (even if simply to state there are none)
+  - Acknowledgements
+  - Data and code availability
+  - Conflict of interest
+  - Funding
+  - Artificial intelligence use
+- Make accessible all data and code used in the study following the [FAIR principles](https://doi.org/10.1038/sdata.2016.18).
+  - Preferably via zenodo, GitHub, figshare, PANGAEA etc. as it will provide a DOI and a citation for your data/code.
+- When using colour schemes in figures, **ensure** that they are accessible.
+  - [Scientific colour maps](https://doi.org/10.5281/zenodo.8409685) provides several ready to use schemes for many applications and programming languages.
+  - Use sans-serif fonts, minimum size ≥ 6 pt (Noto Sans or equivalent size)
+    - the absolute minimum character size should be ≥ 4.8 mm when reproduced at final output size.
+  - Use tools like [DaltonLens](https://daltonlens.org/), [Coblis](https://www.color-blindness.com/coblis-color-blindness-simulator/), [Chroma.js Colour Palette Helper](https://gka.github.io/palettes/), and [ContrastGrid](https://contrast-grid.eightshapes.com)
 
 ### Document Class
 
@@ -129,7 +133,6 @@ Those of you who delve into the `sedimentologika.cls` file will likely notice th
 These two options are for use by the production team at _Sedimentologika_, and not intended for use by authors.
 Note that you cannot fake an article using our template because you can't fake a DOI, but please just don't try.
 We're making this class and template publicly available so anyone interested can suggest improvements, adapt it for other purposes, or contribute to [bug-fixes](#finding-bugs).
-
 
 ### Abstract and Plain Language Summary
 
@@ -153,11 +156,12 @@ For languages derived from the Latin, Greek, or Cyrillic alphabets, simply decla
 [Noto Sans](https://notofonts.github.io/) is used as the font.
 
 For languages using other scripts (e.g. Arabic, Chinese, Korean, Japanese...) you will need to utilise the available Noto Font.
-The template *manuscript.tex* has examples of the required code for the aforementioned languages.
+The template _manuscript.tex_ has examples of the required code for the aforementioned languages.
 
 To add a translation, insert `\translation{language}{translation of the section name}{translation text}` into the third optional argument of the `\SedKtitle{}{}{}` command
 
 For example:
+
 ```
 \SedKtitle{
   English plain language summary goes here
@@ -174,17 +178,17 @@ For example:
 
 If you encounter issues when building your document please check the following:
 
-* You are using a distribution of TeX that has, or you have made available to your TeX installation:
-  * LuaLaTeX
-  * **ALL** the packages listed below in [_Required Packages_](#required-packages)
-* You are attempting to compile using LuaLaTeX
-* You have added the required sections and information to your document
-* You have checked your `.log` file to attempt to identify the cause of the error to ensure it is not caused by an error on your part.
+- You are using a distribution of TeX that has, or you have made available to your TeX installation:
+  - LuaLaTeX
+  - **ALL** the packages listed below in [_Required Packages_](#required-packages)
+- You are attempting to compile using LuaLaTeX
+- You have added the required sections and information to your document
+- You have checked your `.log` file to attempt to identify the cause of the error to ensure it is not caused by an error on your part.
   These could be, but not limited to:
-  * misspelled/incorrect commands
-  * invalid units
-  * missing figure files
-* Tried building the minimal working example
+  - misspelled/incorrect commands
+  - invalid units
+  - missing figure files
+- Tried building the minimal working example
 
 If you have attempted these basic troubleshooting commands and still cannot resolve your issue you should then contact the _Sedimentologika_ editorial team via: [admin@sedimentologika.org](mailto:admin@sedimentologika.org).
 
@@ -199,57 +203,57 @@ If you do happen to find a genuine bug in with the class file, please either con
 
 All packages used in the class are available via the [CTAN](https://ctan.org/) and are standard within the TeXLive distributions (≥ 2024).
 
-* afterpage
-* amsmath
-* amssymb
-* authblk
-* babel
-* booktabs
-* caption
-* ccicons
-* changepage
-* citation-style-language
-* commath
-* datatool
-* datetime2
-* doi
-* draftwatermark
-* fixme
-* fontspec
-* geometry
-* graphics
-* hyperref
-* hyperxmp
-* lineno
-* longtable
-* mhchem
-* microtype
-* multicol
-* multirow
-* nicematrix
-* orcidlink
-* parskip
-* pdflscape
-* ragged2e
-* setspace
-* simpleicons
-* siunitx
-* tcolorbox
-* textgreek
-* textpos
-* titleps
-* titlesec
-* titling
-* unicode-math (will be replaced by lua-unicode-math in future)
-* url
-* xcolor
-* xstring
-* zref
-
+- afterpage
+- amsmath
+- amssymb
+- authblk
+- babel
+- booktabs
+- caption
+- ccicons
+- changepage
+- citation-style-language
+- commath
+- datatool
+- datetime2
+- doi
+- draftwatermark
+- fixme
+- fontspec
+- geometry
+- graphics
+- hyperref
+- hyperxmp
+- lineno
+- longtable
+- mhchem
+- microtype
+- multicol
+- multirow
+- nicematrix
+- orcidlink
+- parskip
+- pdflscape
+- ragged2e
+- setspace
+- simpleicons
+- siunitx
+- tcolorbox
+- textgreek
+- textpos
+- titleps
+- titlesec
+- titling
+- unicode-math (will be replaced by lua-unicode-math in future)
+- url
+- xcolor
+- xstring
+- zref
 
 If Noto Sans (Variable, Math, Mono) fonts are not installed, you will additionally require:
-* noto
-* noto-mono
-* firamath-otf
+
+- noto
+- noto-mono
+- firamath-otf
 
 If you use any additional packages, it is your responsibility to ensure they are compatible with those listed above, and they MUST be part of the TeXLive (≥ 2024) distribution or readily obtainable via the [CTAN](https://ctan.org/).
