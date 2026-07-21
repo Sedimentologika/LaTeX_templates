@@ -190,12 +190,12 @@ If you encounter issues when building your document please check the following:
   - missing figure files
 - Tried building the minimal working example
 
-If you have attempted these basic troubleshooting commands and still cannot resolve your issue you should then contact the _Sedimentologika_ editorial team via: [admin@sedimentologika.org](mailto:admin@sedimentologika.org).
+If you have attempted these basic troubleshooting commands and still cannot resolve your issue you should then contact the _Sedimentologika_ editorial team via: [support@sedimentologika.org](mailto:support@sedimentologika.org).
 
 ## Finding bugs
 
 While the maintainer of the class file has attempted to make it as bug free as possible there is always a chance one has slipped through.
-If you do happen to find a genuine bug in with the class file, please either contact us via [admin@sedimentologika.org](mailto:admin@sedimentologika.org) or better yet, raise an issue on the [GitHub repository](https://github.com/).
+If you do happen to find a genuine bug in with the class file, please either contact us via [support@sedimentologika.org](mailto:support@sedimentologika.org) or better yet, raise an issue on the [GitHub repository](https://github.com/).
 
 **In all cases, please document the steps to reproduce the bug/provide the log file.**
 
