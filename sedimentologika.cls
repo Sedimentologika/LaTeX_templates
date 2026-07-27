@@ -8,14 +8,14 @@
 % https://oap.unige.ch/journals/sdk/
 % Current version with inputs from:
 % Jarred C Lloyd
-% Last updated: 2026-07-19
+% Last updated: 2026-07-27
 % Derived from seismica.cls, and WeAreAGC submission template.
 
 % ----------------------------------------------------------------------------------------
 % Class declaration and switches
 % ----------------------------------------------------------------------------------------
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{sedimentologika}[2026-07-19 Sedimentologika LaTeX class]
+\ProvidesClass{sedimentologika}[2026-07-27 Sedimentologika LaTeX class]
 
 \newif\if@onecolumn
 \@onecolumnfalse
@@ -135,6 +135,32 @@ bib-item-sep = 8 pt plus 4 pt minus 2 pt}
 \definecolor{SedK4}{HTML}{0c7172} % #0c7172
 \definecolor{SedkGrey}{HTML}{5E5E5E} % #5E5E5E
 
+\pdfstringdefDisableCommands{%
+  \let\textsuperscript\@gobble
+  \expandafter\let\csname textsuperscript \endcsname\@gobble
+  \let\@textsuperscript\@gobble
+  \let\rlap\@gobble
+  \let\llap\@gobble
+  \let\thanks\@gobble
+  \let\footnote\@gobble
+  \let\Authfont\@empty
+  \let\Affilfont\@empty
+  \let\affilsep\@empty
+  \let\\\space
+  \let\texttt\@firstofone
+  \let\textcolor\@secondoftwo
+  \let\href\@secondoftwo
+  \let\orcidlink\@gobble
+  \expandafter\let\csname orcidlink \endcsname\@gobble
+  \let\simpleicon\@gobble
+  \expandafter\let\csname simpleicon \endcsname\@gobble
+  \let\mathsurround\@empty
+  \let\z@\@empty
+  \let\f@family\@empty
+  \let\f@series\@empty
+  \let\f@shape\@empty
+}
+
 % ----------------------------------------------------------------------------------------
 %  Custom commands
 % ----------------------------------------------------------------------------------------
@@ -200,8 +226,18 @@ bib-item-sep = 8 pt plus 4 pt minus 2 pt}
 \renewcommand*{\Affilfont}{\mdseries\footnotesize}
 \setlength{\affilsep}{2mm}
 
-\newcommand{\correspondingauthor}[2]{\gdef\@correspondingauthor{\vskip 0.4em\scriptsize*Corresponding author: #1, \href{mailto:#2}{#2}}
-\global\edef\metacontact{#2}}
+\gdef\@correspondingauthor{}
+\gdef\metacontact{}
+
+\newcommand{\correspondingauthor}[2]{%
+  \ifx\@correspondingauthor\@empty
+  \gdef\@correspondingauthor{\vskip 0.4em\scriptsize*Corresponding authors: #1, \href{mailto:#2}{#2}}%
+  \global\edef\metacontact{#2}%
+  \else
+  \g@addto@macro\@correspondingauthor{; #1, \href{mailto:#2}{#2}}%
+  \g@addto@macro\metacontact{, #2}%
+  \fi
+}
 
 \NewCommandCopy{\authblkauthor}{\author}
 
