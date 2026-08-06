@@ -113,7 +113,7 @@ You must:
 - When using colour schemes in figures, **ensure** that they are accessible.
   - [Scientific colour maps](https://doi.org/10.5281/zenodo.8409685) provides several ready to use schemes for many applications and programming languages.
   - Use sans-serif fonts, minimum size ≥ 8 pt (Noto Sans or equivalent size)
-    - the absolute minimum character size should be ≥ 2.8 mm when reproduced at final output size.
+    - the absolute minimum character size should be ≥ 1.5 mm when reproduced at final output size.
   - Use tools like [DaltonLens](https://daltonlens.org/), [Coblis](https://www.color-blindness.com/coblis-color-blindness-simulator/), [Chroma.js Colour Palette Helper](https://gka.github.io/palettes/), and [ContrastGrid](https://contrast-grid.eightshapes.com)
 
 ### Document Class
