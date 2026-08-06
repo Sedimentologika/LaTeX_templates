@@ -256,7 +256,7 @@
     We encourage authors to provide a translation of your abstract and plain language summary into a language of your choice.
     If you wish to provide multiple translations, please contact the editorial team for guidance
 
-    If your translation language requires special fonts (e.g., Arabic), instructions are available in the template file and the README.md file.
+    If your translation language requires special fonts (e.g. Arabic), instructions are available in the template file and the README.md file.
     Should you need further help with this, please contact the editorial team \href{mailto:support@sedimentologika.org}{support@sedimentologika.org}.
   }
 }
@@ -279,7 +279,7 @@ The primary motivations for this switch are to:
     \justifying
 \end{itemize}
 
-While the primary uses of the template are for typesetting by the \Sedimentologika\space team and authors preparing their article for submission to \Sedimentologika\space it also provides you with an easy way to generate a pre-print version that you can post on a pre-print server (e.g., \href{https://eartharxiv.org/}{EarthArXiv}).
+While the primary uses of the template are for typesetting by the \Sedimentologika\space team and authors preparing their article for submission to \Sedimentologika\space it also provides you with an easy way to generate a pre-print version that you can post on a pre-print server (e.g. \href{https://eartharxiv.org/}{EarthArXiv}).
 Simply use \textcolor{violet}{\textbackslash documentclass[preprint]\{sedimentologika\}} in the preamble above.
 
 Like the policy of \href{https://seismica.library.mcgill.ca/author-guidelines#manuscript-preparation}{Seismica}, we do not require authors to use this template at initial submission.
@@ -340,7 +340,7 @@ The American Psychological Association (APA) has produced a guide you may find u
 Scientific research is always a team effort.
 Therefore, we encourage using “we” about the authors as much as using passive voice or third person.
 
-\Sedimentologika\space encourages authors to use both traditional place names and their English equivalents, where appropriate, to acknowledge the cultural significance and diversity of the regions being described, e.g., "the Kaikōura Canyon is located east of Te Wāhipounamu (the South Island of Aotearoa/New Zealand)".
+\Sedimentologika\space encourages authors to use both traditional place names and their English equivalents, where appropriate, to acknowledge the cultural significance and diversity of the regions being described, e.g. "the Kaikōura Canyon is located east of Te Wāhipounamu (the South Island of Aotearoa/New Zealand)".
 
 When applicable, acknowledgement of traditional custodians and their lands should be added.
 
@@ -368,7 +368,7 @@ You can test the appearance of your tables and figures in this layout by using t
 \subsection{Dimensions}
 
 It is best practice to design and test your figures and tables at their intended final size.
-Figures and tables should preferably be designed to fit within either a singe column (e.g., \autoref{fig:KatiThanda}) or across two columns (e.g., \autoref{fig:DepoEnv}) in portrait page mode.
+Figures and tables should preferably be designed to fit within either a singe column (e.g. \autoref{fig:KatiThanda}) or across two columns (e.g. \autoref{fig:DepoEnv}) in portrait page mode.
 However, landscape figures and tables are allowable, but only use these if absolutely required for legibility.
 \autoref{TBL:ftwidths} summarises the maximum dimensions allowable for figures and tables that fit within a single page.
 
@@ -411,13 +411,13 @@ Figures must be designed with accessibility in mind.
 Do not rely on colour alone, use symbols or patterns to assist with differentiation on graphs and other diagrams.
 
 Preferably use the \href{https://fonts.google.com/noto/specimen/Noto+Sans}{Noto Sans} font family as that is what we use for final production.
-However, any standard, sans-serif font (e.g., Arial, Helvetica, Verdana) can be used.
+However, any standard, sans-serif font (e.g. Arial, Helvetica, Verdana) can be used.
 Be consistent and only use one font family.
 
 Use at most three (preferably no more than two) different font sizes for annotations on figures.
 The standard font size should be \qty{10}{pt} Noto Sans or equivalent.
-Regardless of font choice, the minimum character height must be no less than \qty{2.8}{\milli\metre} at final production size for accessibility purposes.
-Aim to use larger font sizes (e.g., \qty{10}{pt} Noto Sans) to improve accessibility.
+Regardless of font choice, the minimum character height must be no less than \qty{1.5}{\milli\metre} ($\approx$~\qty{8}{pt} Noto Sans) at final production size for accessibility purposes.
+Aim to use larger font sizes (e.g. \qty{10}{pt} Noto Sans) to improve accessibility.
 
 Colour schemes \textbf{must} be colour-vision deficiency safe (e.g.\href{https://zenodo.org/records/8409685}{Scientific Colour Maps}).
 
@@ -436,7 +436,7 @@ In \LaTeX, use \verb|\autoref{ref}| to handle this.
 For example, these are cross-references to \autoref{fig:DepoEnv} and \autoref{TBL:ftwidths} using \verb|autoref|.
 
 For figures with sub-panels, add uppercase letters for indexing purposes as shown in \autoref{fig:KatiThanda}A and \autoref{fig:KatiThanda}B.
-If additional sub-indices are required, use parenthesised lowercase Roman numerals, e.g., A(i).
+If additional sub-indices are required, use parenthesised lowercase Roman numerals, e.g. A(i).
 
 \subsection{Table formatting}
 Complex tables present a significant challenge in \LaTeX\space for our volunteer production team.
@@ -525,12 +525,12 @@ While peer-reviewed literature should be the primary sources on which you rely, 
 
 The \Sedimentologika\ class uses the \href{https://mirrors.ctan.org/biblio/citation-style-language/citation-style-language-doc.pdf}{citation-style-langauge} package for referencing.
 
-Use \verb|\cite{}| for parenthetical citations, e.g., \cite{ExampleBook}, and \verb|\textcite{}| for in-line text citations, e.g., \textcite{ExampleArticle} stated that this is an awesome template.
-Prefixes, suffices, and pointers can be added as optional arguments, e.g.,
-\verb|\cite[prefix = {e.g., },|
+Use \verb|\cite{}| for parenthetical citations, e.g. \cite{ExampleBook}, and \verb|\textcite{}| for in-line text citations, e.g. \textcite{ExampleArticle} stated that this is an awesome template.
+Prefixes, suffices, and pointers can be added as optional arguments, e.g.
+\verb|\cite[prefix = {e.g. },|
 \verb|suffix={and references therein}]|
 \verb|{ExampleThesis}|
-will produce \cite[prefix = {e.g., }, suffix={and references therein}]{ExampleThesis}.
+will produce \cite[prefix = {e.g. }, suffix={and references therein}]{ExampleThesis}.
 
 The following is to enable generation of a reference list with examples for an article \cite{ExampleArticle}, book \cite{ExampleBook}, book section \cite{ExampleBookSection}, dataset \cite{ExampleDataset}, map \cite{ExampleMap}, preprint \cite{ExamplePreprint}, report \cite{ExampleReport}, software \cite{ExampleSoftware} and thesis \cite{ExampleThesis}.
 
