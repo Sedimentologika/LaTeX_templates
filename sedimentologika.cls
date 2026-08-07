@@ -8,14 +8,14 @@
 % https://oap.unige.ch/journals/sdk/
 % Current version with inputs from:
 % Jarred C Lloyd
-% Last updated: 2026-07-27
+% Last updated: 2026-08-07
 % Derived from seismica.cls, and WeAreAGC submission template.
 
 % ----------------------------------------------------------------------------------------
 % Class declaration and switches
 % ----------------------------------------------------------------------------------------
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{sedimentologika}[2026-07-27 Sedimentologika LaTeX class]
+\ProvidesClass{sedimentologika}[2026-08-07 Sedimentologika LaTeX class]
 
 \newif\if@onecolumn
 \@onecolumnfalse
@@ -186,10 +186,30 @@ bib-item-sep = 8 pt plus 4 pt minus 2 pt}
   \gdef\@theyear{#1}%
   \global\edef\metayear{#1}%
 }
+% \newcommand{\suppmat}[1]{%
+%   \gdef\@suppmat{#1}%
+%   \global\edef\metasupp{#1}%
+% }
+
+\let\@suppmat\@empty
+\let\@suppmatinfo\@empty
+\let\@suppmattext\@empty
+\def\metasupp{}
+
 \newcommand{\suppmat}[1]{%
-  \gdef\@suppmat{#1}%
-  \global\edef\metasupp{#1}%
+  \ifx\@suppmat\@empty
+		\gdef\@suppmat{#1}
+		\gdef\@suppmatinfo{\href{https://doi.org/#1}{\simpleicon{doi}~#1}}
+		\gdef\@suppmattext{\href{https://doi.org/#1}{doi:~#1}}
+		\global\edef\metasupp{#1}% Plain text for metadata
+  \else
+		\g@addto@macro\@suppmat{, #1}%
+		\g@addto@macro\@suppmatinfo{, \href{https://doi.org/#1}{\simpleicon{doi}~#1}}%
+		\g@addto@macro\@suppmattext{, \href{https://doi.org/#1}{doi:~#1}}%
+		\g@addto@macro\metasupp{, #1}%
+  \fi
 }
+
 \newcommand{\articledoi}[1]{%
   \gdef\@articledoi{#1}%
   \global\edef\metadoi{#1}%
@@ -451,8 +471,8 @@ bib-item-sep = 8 pt plus 4 pt minus 2 pt}
   \if@longauthor
   \clearpage
   \begin{textblock*}{0.9\textwidth}[0.5,0.5](%
-    \dimexpr\pagewidth/2\relax,%
-    \dimexpr\pageheight/2 + \zposy{loc:endauthorblock}sp/2 - 17mm\relax%
+						\dimexpr\pagewidth/2\relax,%
+						\dimexpr\pageheight/2 + \zposy{loc:endauthorblock}sp/2 - 17mm\relax%
     )
     \metadata@boxed
   \end{textblock*}
@@ -468,11 +488,12 @@ bib-item-sep = 8 pt plus 4 pt minus 2 pt}
 }
 
 \newcommand{\printifnotempty}[5]{%
-  \ifthenelse{\equal{#3}{}}{}{
-    \begin{#5}
-      \bfseries\textcolor{SedK1}{#1}#2\mdseries\textcolor{SedK2}{#3}#4
-    \end{#5}
-  }
+  \protected@edef\@tempa{#3}%
+  \ifx\@tempa\@empty \else
+		\begin{#5}
+				\bfseries\textcolor{SedK1}{#1}#2\mdseries\textcolor{SedK2}{#3}#4
+		\end{#5}
+  \fi
 }
 
 \newcommand{\metadata@vertical}{%
@@ -486,7 +507,8 @@ bib-item-sep = 8 pt plus 4 pt minus 2 pt}
   \printifnotempty{Copy Editor}{\par}{\@copyedname}{\vspace{3mm}}{flushright}
   \printifnotempty{Received:}{~}{\@receiveddate}{\par}{flushright}
   \printifnotempty{Accepted:}{~}{\@accepteddate}{\par}{flushright}
-  \printifnotempty{Published:}{~}{\@publisheddate}{\vspace{4mm}}{flushright}
+  \printifnotempty{Published:}{~}{\@publisheddate}{\vspace{3mm}}{flushright}
+  \printifnotempty{Supplementary material}{\par}{\@suppmatinfo}{\vspace{4mm}}{flushright}
   \printifnotempty{\textcolor{SedkGrey}{Keywords}}{\par}{\textcolor{SedkGrey}{\@keywords}}{\par}{flushright}
 }
 
@@ -513,7 +535,10 @@ bib-item-sep = 8 pt plus 4 pt minus 2 pt}
 
         \printifnotempty{Accepted:}{~}{\@accepteddate}{\par\vspace{2mm}}{flushleft}\par
 
-        \printifnotempty{Published:}{~}{\@publisheddate}{\par}{flushleft}\par
+        \printifnotempty{Published:}{~}{\@publisheddate}{\par\vspace{2mm}}{flushleft}\par
+
+        \printifnotempty{Supplementary material}{\par}{\@suppmatinfo}{\par\vspace{2mm}}{flushleft}\par
+
       \end{RaggedRight}
       \columnbreak
       \begin{centering}
@@ -541,8 +566,6 @@ bib-item-sep = 8 pt plus 4 pt minus 2 pt}
     % \metadata@vertical
   \end{tcolorbox}
 }
-
-
 
 % ----------------------------------------------------------------------------------------
 %  basic formatting, declaration of styles
