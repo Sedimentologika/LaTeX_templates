@@ -8,14 +8,14 @@
 % https://oap.unige.ch/journals/sdk/
 % Current version with inputs from:
 % Jarred C Lloyd
-% Last updated: 2026-08-07
+% Last updated: 2026-11-14
 % Derived from seismica.cls, and WeAreAGC submission template.
 
 % ----------------------------------------------------------------------------------------
 % Class declaration and switches
 % ----------------------------------------------------------------------------------------
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{sedimentologika}[2026-08-07 Sedimentologika LaTeX class]
+\ProvidesClass{sedimentologika}[2026-11-14 Sedimentologika LaTeX class]
 
 \newif\if@onecolumn
 \@onecolumnfalse
@@ -631,9 +631,9 @@ bib-item-sep = 8 pt plus 4 pt minus 2 pt}
 
 \captionsetup{font=small, labelfont=bf, justification=justified, labelsep=endash, skip = 5pt, singlelinecheck=off}
 
-\setlength{\textfloatsep}{6mm plus 1mm minus 1mm}
-\setlength{\dbltextfloatsep}{6mm plus 1mm minus 1mm}
-\setlength{\intextsep}{6mm plus 1mm minus 1mm}
+\setlength{\textfloatsep}{5mm plus 1mm minus 1mm}
+\setlength{\dbltextfloatsep}{5mm plus 1mm minus 1mm}
+\setlength{\intextsep}{5mm plus 1mm minus 1mm}
 
 % Section label formatting
 \titleformat{name=\section, numberless}{\RaggedRight\fontsize{9pt}{15pt}\bfseries}{}{0em}{}[]
