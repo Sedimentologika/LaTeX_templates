@@ -1,4 +1,4 @@
-% SPDX-FileCopyrightText: Copyright © 2026-present Sedimentologika
+% SPDX-FileCopyrightText: Copyright © 2026 Sedimentologika
 % SPDX-FileContributor: Jarred C. Lloyd
 %
 % SPDX-License-Identifier: LPPL-1.3c
@@ -8,14 +8,14 @@
 % https://oap.unige.ch/journals/sdk/
 % Current version with inputs from:
 % Jarred C Lloyd
-% Last updated: 2026-11-14
+% Last updated: 2026-11-24
 % Derived from seismica.cls, and WeAreAGC submission template.
 
 % ----------------------------------------------------------------------------------------
 % Class declaration and switches
 % ----------------------------------------------------------------------------------------
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{sedimentologika}[2026-11-14 Sedimentologika LaTeX class]
+\ProvidesClass{sedimentologika}[2026-11-24 Sedimentologika LaTeX class]
 
 \newif\if@onecolumn
 \@onecolumnfalse
@@ -574,9 +574,6 @@ bib-item-sep = 8 pt plus 4 pt minus 2 pt}
 \clubpenalty10000
 \widowpenalty10000
 \brokenpenalty10000
-% \predisplaypenalty10000
-% \postdisplaypenalty10000
-% \displaywidowpenalty10000
 \hyphenpenalty8000
 
 \renewcommand{\topfraction}{0.85}
@@ -590,7 +587,8 @@ bib-item-sep = 8 pt plus 4 pt minus 2 pt}
 
 % Typefaces
 \RequirePackage{fontspec}
-\RequirePackage[math-style=ISO,bold-style=ISO]{unicode-math}
+\RequirePackage{lua-unicode-math}
+\UseInstance{lua-unicode-math-style}{ISO80000-2}
 
 \IfFontExistsTF{Noto Sans}{%
   \babelfont{rm}[%
@@ -647,6 +645,11 @@ bib-item-sep = 8 pt plus 4 pt minus 2 pt}
 \titlespacing{name=\subsubsection}{0em}{*2}{*1}
 
 \setcounter{secnumdepth}{3}
+
+\AtBeginDocument{%
+  \def\subsectionautorefname{section}
+  \def\subsubsectionautorefname{section}
+}
 
 % ----------------------------------------------------------------------------------------
 % Hyperlink and CRediT styling
@@ -1104,5 +1107,5 @@ bib-item-sep = 8 pt plus 4 pt minus 2 pt}
   \fi
 
   \if@anonymous
-  \pdfvariable suppressoptionalinfo \numexpr2+16+32+64+128 \relax
+  \pdfvariable suppressoptionalinfo=\numexpr2+16+32+64+128 \relax
   \fi
